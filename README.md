@@ -32,3 +32,6 @@ accordingly.
 
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
+
+https://www.geeksforgeeks.org/how-to-iterate-over-a-javascript-object/
+https://www.w3schools.com/js/js_objects.asp
