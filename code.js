@@ -5,7 +5,6 @@ function augmentingPath(graph, start, end) {
         if (start == end) {return [start];}
         graph[start].visited = true;
         var toCheck = Object.keys(graph[start]).slice(0, Object.keys(graph[start]).length-1);
-        toCheck.pop();  //Remove visited key from array
         var next;
         var path;
     
