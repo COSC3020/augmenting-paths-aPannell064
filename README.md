@@ -33,5 +33,25 @@ accordingly.
 What is the worst-case big $\Theta$ complexity of your implementation? Add your
 answer, including your reasoning, to this markdown file.
 
-https://www.geeksforgeeks.org/how-to-iterate-over-a-javascript-object/
-https://www.w3schools.com/js/js_objects.asp
+This function works very similar to a depth-first search. When the augmentingPath function is  
+called, it makes a copy of the graph just so that the orignal graph isn't modifed. It then
+marks all edges as unvisited. Doing a deep copy of the graph will cause it to copy every 
+vertex and every edge. Marking each vertex only requires going through the number of vertices. 
+On each call of the dfTraversal function, all of the edges of start will be added to the 
+toCheck array. Only edges that go to vertices that haven't been visited yet will be passed 
+into a new recursive call. Therefore, in the worst case, where the whole graph is traversed 
+each edge and vertex will only be processed once. This does not impact the complexity 
+significantly because copying the array also requires going through all vertices and edges. 
+Therefore the asymptotic complexity is $\Theta(|V| + |E|)$. 
+
+## Additional Help
+
+I used https://www.geeksforgeeks.org/how-to-iterate-over-a-javascript-object/ 
+and https://www.w3schools.com/js/js_objects.asp to help me learn how to use 
+and traverse objects in JavaScript as I had not yet worked with them. 
+
+"I certify that I have listed all sources used to complete this exercise, 
+including the use of any Large Language Models. All of the work is my own, 
+except where stated otherwise. I am aware that plagiarism carries severe 
+penalties and that if plagiarism is suspected, charges may be filed against 
+me without prior notice."
