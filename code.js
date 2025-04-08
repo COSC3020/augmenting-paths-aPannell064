@@ -1,10 +1,12 @@
 function augmentingPath(graph, start, end) {
-    for(var key in graph) {graph[key].visited = false};
+    //Create copy so original isn't modified
+    var copy = JSON.parse(JSON.stringify(graph));
+    for(var key in copy) {copy[key].visited = false};
     
-    function dfSearch(start) {
+    function dfTraversal(start) {
         if (start == end) {return [start];}
-        graph[start].visited = true;
-        var toCheck = Object.keys(graph[start]).slice(0, Object.keys(graph[start]).length-1);
+        copy[start].visited = true;
+        var toCheck = Object.keys(graph[start]);
         var next;
         var path;
     
@@ -13,8 +15,8 @@ function augmentingPath(graph, start, end) {
             next = toCheck.shift();
             
             //Recursively process next unless visited
-            if(!graph[next].visited) {
-                path = dfSearch(next);
+            if(!copy[next].visited) {
+                path = dfTraversal(next);
     
                 //Add node if to path if it exists
                 if(path.length) {
@@ -25,5 +27,5 @@ function augmentingPath(graph, start, end) {
         }
         return [];
     }
-    return dfSearch(start);
+    return dfTraversal(start);
 }
